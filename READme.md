@@ -6,9 +6,14 @@
 
 ## What does this project achieve
 ## Setup 
-- In other to run this application we need to install python 3
+- In other to run this application we need to install [python 3](https://www.python.org/downloads/)
+
 - After installing Python we need to install pipenv using pip install pipenv
-- After installing pipenv we need to install all the packages required for the project using pipenv install
+
+```
+Pip install pipenv
+```
+- After installing [pipenv](https://pypi.org/project/pipenv/) we need to install all the packages required for the project using pipenv install
 
 
 ## Steps to scraping Movies
