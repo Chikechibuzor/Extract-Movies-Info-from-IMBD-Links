@@ -21,6 +21,8 @@ def get_movieinfo_from_imdb_dot_com(url):
     for card in movie_cards:
         h3 = card.find('h3')
         Name = h3.find('a')
+        div_with_id = card.find('div', attrs={'data-caller':"filmosearch"})
+        Movie_id = div_with_id['data-tconst']
         Genre = card.find('span', attrs={'class': 'genre'})
         Summary = card.find_all('p', attrs={'class': "text-muted"})
         plot = Summary[1]
@@ -42,7 +44,8 @@ def get_movieinfo_from_imdb_dot_com(url):
             'Summary': plot.text,
             'Release_Year': Release_yr,
             'Director': Director_name,
-            'Image_url': Image['loadlate']
+            'Image_url': Image['loadlate'],
+            'Movie_id': Movie_id
         }
         data.append(single_info)
     return data
